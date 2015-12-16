@@ -1,3 +1,5 @@
 language: java
 notifications:
   slack: upsilon-team:5XuJg8QUFazp3JqDcDzB8XEn
+jdk:
+  - oraclejdk8
