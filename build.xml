@@ -19,7 +19,7 @@
     <echo message="Made build path." />
   </target>
 
-  <target name="compile" depends="test"
+  <target name="compile" depends="init"
         description="compile the source">
     <!-- Compile the java code from ${src} into ${build} -->
     <javac srcdir="${src}" destdir="${build}"/>
