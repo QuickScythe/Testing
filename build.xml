@@ -29,7 +29,7 @@
   <target name="run" depends="compile"
       description="Run the webserver. Hopfully.">
       <echo message="Running project." />
-      <java classname="me.cameronwitcher.upsilon.Bridge">
+      <java classname="me.cameronwitcher.testing.Main">
           <classpath>
               <pathelement path="${build}" />
           </classpath>
