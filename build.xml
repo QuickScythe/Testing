@@ -29,7 +29,7 @@
   <target name="run" depends="compile"
       description="Run the webserver. Hopfully.">
       <echo message="Running project." />
-      <java jar="">
+      <java classname="me.cameronwitcher.testing.Main" fork="true">
           <classpath>
               <pathelement path="${build}" />
           </classpath>
