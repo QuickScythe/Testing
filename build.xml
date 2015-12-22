@@ -30,6 +30,7 @@
       description="Run the webserver. Hopfully.">
       <echo message="Running project." />
       <java classname="me.cameronwitcher.testing.Main" fork="true">
+      	<arg value="testing"/>
           <classpath>
               <pathelement path="${build}" />
           </classpath>
