@@ -1,8 +1,7 @@
 package me.cameronwitcher.testing;
 
-import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Polygon;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,6 +23,7 @@ public class Panel extends JPanel implements ActionListener {
 	private static final long serialVersionUID = 1L;
 
 	Timer timer;
+	Polygon poly;
 
 	public Panel() {
 		
@@ -31,6 +31,8 @@ public class Panel extends JPanel implements ActionListener {
 	}
 
 	public void initBoard() {
+		
+		poly = new Polygon(new int[] {300+10,300-10,300-10,300+10}, new int[] {300+10,300+10,300-10,300-10}, 4);
 
 		timer = new Timer(15, this);
 		timer.start();
@@ -50,31 +52,16 @@ public class Panel extends JPanel implements ActionListener {
 	}
 
 	public void drawMenu(Graphics g) {
-		for(int y=0;y!=10;y++){
-			for(int x=0;x!=10;x++){
-				String[] l = Main.map.get(y).split(":");
-				switch(l[x]){
-				case "B":
-					g.setColor(Color.BLUE);
-					break;
-				case "R":
-					g.setColor(Color.RED);
-					break;
-				default:
-					g.setColor(Color.BLACK);
-					break;
-				}
-				
-				
-				
-				g.fillRect(x*60, y*60, 60, 60);
-			}
-		}
+		g.drawLine(getCircleLocationX(), getCircleLocationY(), 300, 300);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		repaint();
+	}
+	
+	private void rotatePoly(){
+		
 	}
 
 	private class TAdapter extends KeyAdapter {
